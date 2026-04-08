@@ -12,13 +12,13 @@ Run this single command in your Termux:
 ```bash
 curl -L https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux/main/run.sh | bash
 ```
-📖 Usage
+# 📖 Usage
 Connect your Samsung phone in Download Mode via OTG.
 Type heimdall detect.
 Tap OK on the Android permission popup.
 Press ENTER in Termux to finish the handshake.
-```
-Command Examples
+
+# Command Examples
 since This Is A full Port of heimdall v2.2.2, you can use all standard commands. here is how To structure them:
 ```
 detect connection
