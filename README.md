@@ -44,5 +44,4 @@ check version
 ```bash
 heimdall version
 ```
-if you find any bugs please report it on sameenataj427@gmail.com
-Thank you
+if you find any bugs please report it on sameenataj427@gmail.com. Thank you
