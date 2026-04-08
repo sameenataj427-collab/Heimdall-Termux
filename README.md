@@ -7,42 +7,42 @@ No Root Required: Uses Android's native USB File Descriptors.
 Automated Setup: Updates your packages and installs dependencies for you.
 Smart Handshake: Handles the USB permission popup and execute flow automatically. 
 
-📦 # Installation
+📦 Installation
 Run this single command in your Termux:
 ```bash
 curl -L [https://github.com](https://github.com/sameenataj427-collab/Heimdall-Termux/blob/main/README.md) | bash
 ```
-📖 # Usage
+📖 Usage
 Connect your Samsung phone in Download Mode via OTG.
 Type heimdall detect.
 Tap OK on the Android permission popup.
 Press ENTER in Termux to finish the handshake.
 ```
-# Command Examples
+Command Examples
 since This Is A full Port of heimdall v2.2.2, you can use all standard commands. here is how To structure them:
 ```
-# detect connection
+detect connection
 ```bash
 heimdall detect
 ```
-# view device info
+view device info
 heimdall device-info
 ```
-# flash recovery
+flash recovery
 ```bash
 heimdall flash --RECOVERY recovery.img
 ```
-# flash full firmware
+flash full firmware
 ```bash
 heimdall flash --BOOT boot.img --RECOVERY recovery.img --SYSTEM system.img
 ```
-# print pit (text)
+print pit (text)
 ```bash
 heimdall print-pit
 ```
-# check version
+check version
 ```bash
 heimdall version
 ```
-# if you find any bugs please report it on sameenataj427@gmail.com
-# Thank you
+if you find any bugs please report it on sameenataj427@gmail.com
+Thank you
