@@ -21,27 +21,27 @@ Press ENTER in Termux to finish the handshake.
 # Command Examples:
 
 since This Is A full Port of heimdall v2.2.2, you can use all standard commands. here is how To structure them:
-detect connection
+# detect connection
 ```bash
 heimdall detect
 ```
-view device info
+# view device info
 ```bash
 heimdall device-info
 ```
-flash recovery
+# flash recovery
 ```bash
 heimdall flash --RECOVERY recovery.img
 ```
-flash full firmware
+# flash full firmware
 ```bash
 heimdall flash --BOOT boot.img --RECOVERY recovery.img --SYSTEM system.img
 ```
-print pit (text)
+# print pit (text)
 ```bash
 heimdall print-pit
 ```
-check version
+# check version
 ```bash
 heimdall version
 ```
