@@ -1,25 +1,27 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
-# Use the permanent binary location
+# Permanent location of your compiled binary
 BINARY="$PREFIX/bin/heimdall-binary"
 
-# 1. Show usage/help if no arguments or wrong arguments are given
-if [ -z "$1" ]; then
-    echo "Heimdall for Termux (No-Root Edition)"
-    echo "Usage: heimdall <command> [options]"
-    echo "Examples: heimdall detect, heimdall version, heimdall download-pit"
-    echo "-----------------------------------------------------------"
+# 1. Full Help Menu & Usage
+if [ -z "$1" ] || [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    echo "=========================================="
+    echo "   Heimdall for Termux (No-Root Edition)"
+    echo "=========================================="
+    echo "Status: Using Android USB File Descriptor Logic"
+    echo ""
+    # Call the binary's internal help menu
     $BINARY help
     exit 0
 fi
 
-# 2. Bypass USB for info commands
-if [ "$1" = "version" ] || [ "$1" = "help" ]; then
-    $BINARY "$@"
+# 2. Bypass USB for Version command
+if [ "$1" = "version" ]; then
+    $BINARY version
     exit 0
 fi
 
-# 3. USB Handshake Logic
+# 3. USB Handshake Logic for Flashing/Detecting
 DEV=$(termux-usb -l | grep -o '/dev/bus/usb/[0-9]*/[0-9]*' | head -n 1)
 
 if [ -z "$DEV" ]; then
@@ -32,5 +34,5 @@ termux-usb -r "$DEV"
 echo "[?] Tap 'OK' on the system popup, then press [ENTER] to continue..."
 read dummy
 
-# 4. Execute any command using the File Descriptor
+# 4. Execute the actual command with the FD
 termux-usb -e "$DEV" $BINARY "$@"
