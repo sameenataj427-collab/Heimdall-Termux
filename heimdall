@@ -1,0 +1,36 @@
+#!/data/data/com.termux/files/usr/bin/sh
+BINARY="$PREFIX/bin/heimdall-binary"
+
+# 1. Bypass for help/version
+if [ -z "$1" ] || [ "$1" = "help" ] || [ "$1" = "--help" ] || [ "$1" = "version" ]; then
+    $BINARY "$@"
+    exit 0
+fi
+
+# 2. Smart Validation: Use a list of valid commands
+# This ensures it ONLY moves to USB logic if the command is 100% correct
+VALID_CMDS="detect|device-info|download-pit|flash|print-pit|close-pc-screen|help|version"
+
+if ! echo "$1" | grep -Eq "^($VALID_CMDS)$"; then
+    echo "Error: '$1' is unrecognized. Use 'heimdall help' for help."
+    exit 1
+fi
+
+# 3. Handle incomplete valid commands (e.g., 'flash' with no files)
+if { [ "$1" = "flash" ] || [ "$1" = "download-pit" ]; } && [ -z "$2" ]; then
+    $BINARY help "$1"
+    exit 0
+fi
+
+# 4. USB Handshake: Only triggers if the command is valid
+DEV=$(termux-usb -l | grep -o '/dev/bus/usb/[0-9]*/[0-9]*' | head -n 1)
+
+if [ -z "$DEV" ]; then
+    echo "[-] No Samsung device found. Check OTG & Download Mode."
+    exit 1
+fi
+
+termux-usb -r "$DEV"
+echo "[?] Tap 'OK' on the system popup, then press [ENTER] to continue..."
+read dummy
+termux-usb -e "$DEV" $BINARY "$@"
