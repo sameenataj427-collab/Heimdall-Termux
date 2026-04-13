@@ -7,7 +7,8 @@ No Root Required: Uses Android's native USB File Descriptors.
 Automated Setup: Updates your packages and installs dependencies for you.
 Smart Handshake: Handles the USB permission popup and execute flow automatically. 
 
-📦 Installation
+📦 # Installation
+
 Run this single command in your Termux:
 ```bash
 curl -L https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux/main/heimdall -o $PREFIX/bin/heimdall-binary && \
