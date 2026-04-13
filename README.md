@@ -15,10 +15,11 @@ Smart Handshake: Handles the USB permission popup and execute flow automatically
 
 Run this single command in your Termux:
 ```bash
-curl -L https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux/main/heimdall -o $PREFIX/bin/heimdall-binary && \
-curl -LO https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux/main/setup.sh && \
-chmod +x $PREFIX/bin/heimdall-binary setup.sh && \
-./setup.sh && rm setup.sh
+curl -LO https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux-NoRoot/main/heimdall \
+     -LO https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux-NoRoot/main/heimdall-binary \
+     -LO https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux-NoRoot/main/setup.sh && \
+     chmod +x heimdall heimdall-binary setup.sh && \
+     ./setup.sh && rm setup.sh
 ```
 # 📖 Usage
 Connect your Samsung phone in Download Mode via OTG.
