@@ -11,11 +11,32 @@ No Root Required: Uses Android's native USB File Descriptors.
 Automated Setup: Updates your packages and installs dependencies for you.
 Smart Handshake: Handles the USB permission popup and execute flow automatically. 
 
+# 📖 Usage
+
+1. first install the tool using the steps given below
+
+2. then off your target phone completely
+
+3. then take a good quality otg and attach the otg to the host phone
+
+4. then take a data cable and connect the usb A side to the otg connected to the host phone
+
+5. now with the target phone powered off, hold ots booth volume up and volume down buttons at the same time, while holding them commect rge other side of tge cable to the target phone
+
+6. After connecting keep holding the buttons untill you see a light blue warning screen
+
+7. After the warning screen appers, leave booth buttons, and press tge volume up button once
+
+8. now rhe screen will change and you will see a text that says **"Downloading..."**
+
+9. now you are in download mode, and can use the tool
+
 # Guid To Install The Tool 👇👇
 
-First install Termux and Termux:api from Fdroid or GitHub, dont use termux from playstore, that is a outdated version and it doesn't have the nessary pakages for the tool to run
+First install [Termux a](https://f-droid.org/repo/com.termux_1022.apk)nd [Termux:api](https://f-droid.org/repo/com.termux.api_1002.apk) from Fdroid or GitHub, dont use termux from playstore, that is a outdated version and it doesn't have the nessary pakages for the tool to run
 
-# Run these commands in termux
+# after downloading termux and termux api, open termux and run these commands in it
+
 # Give termux storage permission
 ```bash
 termux-setup-storage
@@ -28,11 +49,6 @@ curl -LO https://raw.githubusercontent.com/sameenataj427-collab/Heimdall-Termux-
      chmod +x heimdall heimdall-binary setup.sh && \
      ./setup.sh && rm setup.sh
 ```
-# 📖 Usage
-Connect your Samsung phone in Download Mode via OTG.
-Type heimdall detect.
-Tap OK on the Android permission popup.
-Press ENTER in Termux to finish the handshake.
 
 # Command Examples:
 
@@ -61,4 +77,4 @@ heimdall print-pit
 ```bash
 heimdall version
 ```
-if you find any bugs please report it on sameenataj427@gmail.com. Thank you
+for suggestions ang bug reports please contact on sameenataj427@gmail.com. Thank you
